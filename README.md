@@ -17,7 +17,7 @@ Allows getting meteor globals in npm packages
 ````
 
 ## License
-Licensed under GPLv3 license. Copyright (c) 2015 Max Nowack
+Licensed under MIT license. Copyright (c) 2016 Max Nowack
 
 ## Contributions
 Contributions are welcome. Please open issues and/or file Pull Requests.
