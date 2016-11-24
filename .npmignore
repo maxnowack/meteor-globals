@@ -7,3 +7,5 @@
 npm-debug.log
 test.js
 .travis.yml
+.nyc_output
+coverage

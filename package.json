@@ -4,8 +4,9 @@
   "description": "Allows getting meteor globals in npm packages",
   "main": "index.js",
   "scripts": {
-    "test": "ava",
-    "coverage": "nyc --check-coverage --lines 100 npm test",
+    "test": "./node_modules/.bin/ava",
+    "coverage": "./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report --reporter=text-lcov",
+    "coveralls": "npm run coverage | ./node_modules/.bin/coveralls",
     "lint": "./node_modules/.bin/eslint ."
   },
   "repository": {
@@ -44,6 +45,7 @@
   "homepage": "https://github.com/maxnowack/meteor-globals#readme",
   "devDependencies": {
     "ava": "0.17.0",
+    "coveralls": "^2.11.15",
     "eslint": "3.10.2",
     "eslint-config-airbnb-base": "10.0.1",
     "eslint-plugin-import": "2.2.0"
