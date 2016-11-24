@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/ava",
-    "coverage": "./node_modules/.bin/nyc npm test && ./node_modules/.bin/nyc report --reporter=text-lcov",
-    "coveralls": "npm run coverage | ./node_modules/.bin/coveralls",
+    "coverage": "./node_modules/.bin/nyc npm test",
+    "coveralls": "npm run coverage && ./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "lint": "./node_modules/.bin/eslint ."
   },
   "repository": {
