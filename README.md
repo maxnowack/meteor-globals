@@ -1,4 +1,4 @@
-# meteor-globals ![Build status](https://travis-ci.org/maxnowack/meteor-globals.svg?branch=master)
+# meteor-globals ![Build status](https://travis-ci.org/maxnowack/meteor-globals.svg?branch=master) [![Coverage Status](https://coveralls.io/repos/github/maxnowack/meteor-globals/badge.svg?branch=master)](https://coveralls.io/github/maxnowack/meteor-globals?branch=master)
 Allows getting meteor globals in npm packages
 
 ## Installation
