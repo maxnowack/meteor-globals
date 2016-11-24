@@ -2,8 +2,5 @@ language: node_js
 node_js:
   - "6"
 
-before_install:
-  - npm install --global nyc coveralls ava
-
 script:
   - npm run coveralls
