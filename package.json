@@ -1,0 +1,51 @@
+{
+  "name": "meteor-globals",
+  "version": "0.1.0",
+  "description": "Allows getting meteor globals in npm packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava",
+    "coverage": "nyc --check-coverage --lines 100 npm test",
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxnowack/meteor-globals.git"
+  },
+  "keywords": [
+    "meteor"
+  ],
+  "ava": {
+    "files": [
+      "test.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb-base"
+    ],
+    "rules": {
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "test.js"
+          ],
+          "optionalDependencies": false
+        }
+      ]
+    }
+  },
+  "author": "Max Nowack <max@unsou.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maxnowack/meteor-globals/issues"
+  },
+  "homepage": "https://github.com/maxnowack/meteor-globals#readme",
+  "devDependencies": {
+    "ava": "0.17.0",
+    "eslint": "3.10.2",
+    "eslint-config-airbnb-base": "10.0.1",
+    "eslint-plugin-import": "2.2.0"
+  }
+}
