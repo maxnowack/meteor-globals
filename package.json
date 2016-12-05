@@ -2,7 +2,7 @@
   "name": "meteor-globals",
   "version": "1.0.0",
   "description": "Allows getting meteor globals in npm packages",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "./node_modules/.bin/babel src -d dist",
     "prepublish": "npm run build",
