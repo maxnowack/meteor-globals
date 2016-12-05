@@ -1,13 +1,15 @@
 {
   "name": "meteor-globals",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Allows getting meteor globals in npm packages",
   "main": "index.js",
   "scripts": {
+    "build": "./node_modules/.bin/babel src -d dist",
+    "prepublish": "npm run build",
     "test": "./node_modules/.bin/ava",
     "coverage": "./node_modules/.bin/nyc npm test",
     "coveralls": "npm run coverage && ./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
-    "lint": "./node_modules/.bin/eslint ."
+    "lint": "./node_modules/.bin/eslint --ignore-path .gitignore ."
   },
   "repository": {
     "type": "git",
@@ -16,12 +18,28 @@
   "keywords": [
     "meteor"
   ],
+  "files": [
+    "dist"
+  ],
   "ava": {
     "files": [
-      "test.js"
+      "tests/index.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ],
+    "plugins": [
+      "transform-async-to-generator"
     ]
   },
   "eslintConfig": {
+    "parser": "babel-eslint",
     "extends": [
       "airbnb-base"
     ],
@@ -30,7 +48,7 @@
         "error",
         {
           "devDependencies": [
-            "test.js"
+            "tests/**"
           ],
           "optionalDependencies": false
         }
@@ -45,6 +63,11 @@
   "homepage": "https://github.com/maxnowack/meteor-globals#readme",
   "devDependencies": {
     "ava": "0.17.0",
+    "babel-cli": "6.18.0",
+    "babel-core": "6.18.2",
+    "babel-eslint": "7.1.1",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-preset-es2015": "6.18.0",
     "coveralls": "^2.11.15",
     "eslint": "3.11.0",
     "eslint-config-airbnb-base": "10.0.1",
