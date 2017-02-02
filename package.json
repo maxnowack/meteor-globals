@@ -63,7 +63,7 @@
   },
   "homepage": "https://github.com/maxnowack/meteor-globals#readme",
   "devDependencies": {
-    "ava": "0.17.0",
+    "ava": "0.18.0",
     "babel-cli": "6.18.0",
     "babel-core": "6.21.0",
     "babel-eslint": "7.1.1",
