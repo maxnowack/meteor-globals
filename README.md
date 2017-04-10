@@ -19,6 +19,7 @@ After that, you can use `getGlobal` to get the globals from these packages.
   ensureDependencies([
     'mongo',
     'cultofcoders:redis-oplog',
+    'teamgrid:optimistic-increment@1.0.0', // depending on specific versions are also possible (semver)
   ], {
     name: 'my-awesome-meteor-npm-package',
     restart: true,

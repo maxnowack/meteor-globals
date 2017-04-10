@@ -34,3 +34,12 @@ test(async (t) => {
   ensureDependencies(['some:meteor-package'], { restart: false });
   ensureDependencies(['some:meteor-package'], false);
 });
+
+test(async (t) => {
+  t.false(ensureDependency('some:meteor-package@1.0.0'));
+  t.true(ensureDependency('another:meteor-package@1.0.0'));
+  const result = ensureDependency('another:meteor-package@2.0.0');
+  t.is(result.installedVersion, '1.0.0');
+  t.is(result.neededVersion, '2.0.0');
+  t.is(result.name, 'another:meteor-package');
+});
