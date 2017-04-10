@@ -4,6 +4,7 @@ import { getGlobal, checkMeteor, ensureDependency, ensureDependencies } from '..
 
 global.Package = {
   mongo: { Mongo: true },
+  meteor: { Meteor: { isClient: false } },
   underscore: { _: true },
   'cultofcoders:redis-oplog': { RedisOplog: true },
 };

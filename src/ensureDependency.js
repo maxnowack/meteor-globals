@@ -4,6 +4,10 @@ import getGlobal from './getGlobal';
 import checkMeteor from './checkMeteor';
 
 export default function ensureDependency(packageName, fileCheck = true) {
+  if (process.env.NODE_ENV === 'production') return false;
+  const meteor = getGlobal('meteor', 'Meteor');
+  if (!meteor || meteor.isClient) return false;
+
   if (getGlobal(packageName)) return false;
 
   const packageFile = path.resolve('./.meteor/packages');
