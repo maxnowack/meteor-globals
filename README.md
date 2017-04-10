@@ -44,7 +44,7 @@ Checks if executed inside of a meteor project.
 Installes a single atmosphere package. Use `ensureDependencies` for convenience.
 
 ## License
-Licensed under MIT license. Copyright (c) 2016 Max Nowack
+Licensed under MIT license. Copyright (c) 2017 Max Nowack
 
 ## Contributions
 Contributions are welcome. Please open issues and/or file Pull Requests.
