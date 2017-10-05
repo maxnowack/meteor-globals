@@ -25,7 +25,10 @@ export default function ensureDependencies(...args) {
   const installedDeps = [];
   deps.forEach((dep) => {
     const result = ensureDependency(dep, false);
-    if (result) installedDeps.push(dep);
+    if (result && !result.neededVersion) installedDeps.push(dep);
+    if (result && result.neededVersion) {
+      console.log(`=> ${options.name} depends on ${result.name}@${result.neededVersion} but version ${result.installedVersion} is installed.`);
+    }
   });
   if (options.restart && installedDeps.length) {
     console.log();
