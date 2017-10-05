@@ -1,6 +1,5 @@
-import path from 'path';
-import fs from 'fs';
 import getGlobal from './getGlobal';
+import findDotMeteorDir from './findDotMeteorDir';
 
 const checks = {
   fileCheck() {
@@ -8,8 +7,8 @@ const checks = {
     const meteor = getGlobal('meteor', 'Meteor');
     if (!meteor) return false;
     if (meteor.isClient) return true;
-    const packageFile = path.resolve('./.meteor/packages');
-    return fs.existsSync(packageFile);
+    const dotMeteor = findDotMeteorDir();
+    return !!dotMeteor;
   },
   globalCheck() {
     return !!global.Package;
