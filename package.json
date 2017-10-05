@@ -7,7 +7,7 @@
     "build": "babel src -d dist",
     "prepublish": "npm run build",
     "pretest": "npm run lint -- --quiet",
-    "test": "ava && npm run test-meteor",
+    "test": "ava",
     "copy": "npm link && cd meteor-tests && npm link meteor-globals",
     "test-meteor": "npm run copy && cd meteor-tests && TEST_BROWSER_DRIVER=nightmare meteor test -p 3100 --once --driver-package dispatch:mocha",
     "test-watch": "ava -w",
